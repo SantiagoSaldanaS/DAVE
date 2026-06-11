@@ -1,0 +1,78 @@
+# YOLOv8n configuration for the surveillance pipeline.
+
+yolo:
+  # yolov8s.pt (Small) for better accuracy
+  model_path: "yolov8s.pt"
+  device: "cuda"
+
+  # person detection
+  person_conf_thresh: 0.80
+  person_class_id: 0
+
+  # driver isolation
+  # "left"  = driver is leftmost person (LHD: USA, Mexico, Europe)
+  # "right" = driver is rightmost person (RHD: UK, Japan, Australia)
+  drive_side: "left"
+
+  # Scoring weights (must sum to 1.0)
+  driver_score_weights:
+    horizontal_position: 0.35
+    box_area: 0.50
+    vertical_anchor: 0.15
+
+  iou_track_thresh: 0.40
+  redetect_every_n_frames: 30
+
+  # object detection
+  object_conf_thresh: 0.15
+  roi_padding_px: 150
+  imgsz: 640
+  person_imgsz: 320
+
+  # COCO class IDs to detect
+  object_classes:
+    67: "phone"
+    39: "bottle"
+    41: "cup"
+    46: "banana"
+    47: "apple"
+    76: "scissors"
+    43: "knife"
+    65: "remote"
+    73: "book"
+
+  # Maps class IDs to event categories used by EventEngine
+  class_to_event:
+    67: "phone"
+    39: "food"
+    41: "food"
+    46: "food"
+    47: "food"
+    76: "danger"
+    43: "danger"
+    65: "phone"
+    73: "danger"
+
+events:
+  sustain_seconds:
+    phone: 1.5
+    food: 2.0
+    danger: 0.5
+    drowsy: 0.5
+    distracted: 0.5
+    eyes_off: 2.0
+
+  cooldown_seconds: 10.0
+  re_trigger_interval_seconds: 30.0
+  model_confidence_thresh: 0.80
+  eyes_off_road_thresh: 0.60
+
+clips:
+  pre_buffer_seconds: 3.0   # reduced from 5.0, saves around 165 MB RAM on Pi 5
+  post_buffer_seconds: 5.0
+  output_dir: "output/clips"
+  fourcc: "avc1"
+
+logging_out:
+  output_dir: "output/logs"
+  base_name: "events"
