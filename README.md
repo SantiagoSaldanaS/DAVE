@@ -61,9 +61,9 @@ npm run dev
 `tools/rpi_sim.py` replays recorded video for testing without hardware.
 
 Made by:
-Santiago Saldaña Subías – A01708446
-Diego Perea León – A01708350
-Felipe Pacheco Zamorrano - A01713238
-Diego Alberto Pasaye González - A01708525
-Josué Martínez Alvedaño - A01709351
-Alondra Lizeth Landín Vega -  A01708546
+* Santiago Saldaña Subías – A01708446
+* Diego Perea León – A01708350
+* Felipe Pacheco Zamorrano - A01713238
+* Diego Alberto Pasaye González - A01708525
+* Josué Martínez Alvedaño - A01709351
+* Alondra Lizeth Landín Vega - A01708546
