@@ -1,4 +1,4 @@
-# Attention-Algorithm (DAVE)
+# Driver Attention & Vision Evaluator (DAVE)
 
 Driver attention and fatigue monitoring system. The repo holds the full stack:
 an on-device vision pipeline that scores driver state from a camera feed, and a
