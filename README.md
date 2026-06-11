@@ -60,7 +60,7 @@ npm run dev
 `tools/rpi_live.py` runs the pipeline on-device and pushes trips to the API.
 `tools/rpi_sim.py` replays recorded video for testing without hardware.
 
-Made by:
+## Authors
 * Santiago Saldaña Subías – A01708446
 * Diego Perea León – A01708350
 * Felipe Pacheco Zamorrano - A01713238
