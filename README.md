@@ -4,6 +4,8 @@ Driver attention and fatigue monitoring system. The repo holds the full stack:
 an on-device vision pipeline that scores driver state from a camera feed, and a
 cloud layer that ingests trips, stores clips, and serves a web dashboard.
 
+🏆 1st Place Winner at Expo Ingenierías 2026 (Tec de Monterrey)
+
 ## Layout
 
 ```
